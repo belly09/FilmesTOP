@@ -88,3 +88,47 @@ body {
 body.active {
   overflow: hidden;
 }
+
+.container {
+  padding: 15px;
+}
+
+/* ------------------------------- *\
+* HEADER
+/* ------------------------------- */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 25px;
+  transition: var(--transition2);
+  z-index: 2;
+}
+
+.header:active {
+  background: var(--eerie-black);
+  padding: 20px;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-actions {
+  display: none;
+}
+
+.btn-mobile ion-icon {
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+button {
+  background: transparent;
+  border: none;
+}
