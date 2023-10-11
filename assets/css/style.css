@@ -108,7 +108,7 @@ body.active {
 }
 
 .header:active {
-  background: var(--eerie-black);
+  background: rgb(255, 142, 217);
   padding: 20px;
 }
 
@@ -131,4 +131,87 @@ body.active {
 button {
   background: transparent;
   border: none;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  background-color: var(--eerie-black);
+  width: 100%;
+  max-width: 300px;
+  height: 100%;
+  transition: 0.15s ease-in;
+  visibility: hidden;
+}
+
+.navbar.active {
+  right: 0;
+  visibility: visible;
+  transition: 0.25s ease-out;
+}
+
+.navbar-top {
+  padding: 30px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-close {
+  color: var(--white);
+  font-size: 25px;
+  padding: 5px;
+}
+
+.menu-close ion-icon {
+  --ionicon-stroke-width: 60px;
+}
+
+.navbar-list {
+  border-top: 1px solid hsla(0, 0%, 100%, 0.1);
+  margin-bottom: 30px;
+}
+
+.navbar-link {
+  color: white;
+  font-size: var(--fs-8);
+  font-weight: var(--fw-500);
+  padding: 10px 25px;
+  border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
+  transition: var(--transition1);
+}
+
+.navbar-link:hover {
+  color: rgb(255, 95, 202);
+}
+
+.navbar-social-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar-social-link {
+  font-size: 20px;
+  color: white;
+  transition: var(--transition1);
+}
+
+.navbar-social-link:hover {
+  color: rgb(255, 95, 202);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: hsla(204, 18%, 0.8);
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition2);
+}
+
+.overlay.active {
+  pointer-events: all;
 }
