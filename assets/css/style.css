@@ -1,217 +1,272 @@
-/* ------------------------------- *\
-* copyright 2023 @Isabel
-/* ------------------------------- *\
-
-/* ------------------------------- *\
-* CUSTOM PROPERTY
-/* ------------------------------- */
+/**copyright 2023 isabel*/
+/**CUSTOM PROPERTY*/
 
 :root {
+
   --rich-black-fogra-29: hsl(225, 25%, 9%);
-  --rich-black-fogra-39: hsl(170, 21%, 5%);
-  --raisin-black: hsl(228, 13%, 15%);
-  --eerie-black: hsl(207, 19%, 11%);
-  --light-gray: hsl(0, 3%, 80%);
-  --gunmetal-1: hsl(229, 15%, 21%);
-  --gunmetal-2: hsl(216, 22%, 18%);
-  --gainsboro: hsl(0, 7%, 88%);
-  --citrine: hsl(57, 97%, 45%);
-  --xiketic: hsl(253, 21%, 13%);
-  --gray-x: hsl(0, 0%, 74%);
-  --white: hsl(0, 100%, 100%);
-  --black: hsl(0, 0%, 0%);
-  --jet: hsl(0, 0%, 20%);
+ --rich-black-fogra-39: hsl(170, 21%, 5%);
+ --raisin-black: hsl(228, 13%, 15%);
+ --eerie-black: hsl(207, 19%, 11%);
+ --light-gray: hsl(0, 3%, 80%);
+ --gunmetal-1: hsl(229, 15%, 21%);
+ --gunmetal-2: hsl(216, 22%, 18%);
+ --gainsboro: hsl(0, 7%, 88%);
+ --citrine: hsl(57, 97%, 45%);
+ --xiketic: hsl(253, 21%, 13%);
+ --gray-x: hsl(0, 0%, 74%);
+ --white: hsl(0, 100%, 100%);
+ --black: hsl(0, 0%, 0%);
+ --jet: rgb(51, 51, 51);
+ --pink: #ffc0cb;
+ --blue: #afeeee;
+ 
+ 
+ /*fontes*/
+ 
+ --ff-poppins: 'Poppins', sans-serif;
+ 
+ --fs-1: 36px;
+ --fs-2: 32px;
+ --fs-3: 30px;
+ --fs-4: 24px;
+ --fs-5: 20px;
+ --fs-6: 18px;
+ --fs-7: 16px;
+ --fs-8: 15px;
+ --fs-9: 14px;
+ --fs-10: 13px;
+ --fs-11: 12px;
+ --fs-12: 11px;
+ 
+ --fw-599: 500;
+ --fw-700: 700;
+ 
+ /*transição*/
+ 
+ --transition1: 0.15s ease;
+ --transition-2: 0.25s ease-in;
+ 
+ /*espaço*/
+ 
+  --section-padding:100px;
+ }
+ 
+ /*-----------------*/
+ /* RESET */
+ /*-----------------*/
+ 
+ .h1, h2, h3{
+    color: var(--white);
+    line-height: 40px;
+ }
 
-  /* Fontes */
-  --ff-poppins: 'Poppins', sans-serif;
-
-  --fs-1: 36px;
-  --fs-2: 32px;
-  --fs-3: 30px;
-  --fs-4: 24px;
-  --fs-5: 20px;
-  --fs-6: 18px;
-  --fs-7: 16px;
-  --fs-8: 15px;
-  --fs-9: 14px;
-  --fs-10: 13px;
-  --fs-11: 12px;
-  --fs-12: 11px;
-
-  --fw-500: 500;
-  --fw-500: 700;
-
-  /* Transition */
-  --transition1: 0.15s ease;
-  --transition2: 0.25s ease-in;
-
-  /* Spacing */
-  --section-padding: 100px;
+ .h1{
+    font-size: var(--fs-1);
 }
 
-/* ------------------------------- *\
-* RESET
-/* ------------------------------- */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.h2{
+    font-size: var(--fs-2);
 }
 
-li {
-  list-style: none;
+.h3{
+    font-size: var(--fs-6);
 }
-
-a {
-  text-decoration: none;
-}
-
-a,
-img,
-span,
-input,
-button,
-ion-icon {
+ *{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+ 
+ li{
+     list-style: none;
+ }
+ 
+ a {
+     text-decoration: none;
+ }
+ 
+ a,
+ img,
+ span,
+ input,
+ buttons,
+ ion-icon {
   display: block;
-}
+ }
+ 
+ html{
+     font-family: var(--ff-poppins); 
+     scroll-behavior:smoth;
+ }
+ 
+ body{
+     background: var(--eerie-black);
+ }
+ 
+ body.active{
+     overflow: hidden;
+ }
+ 
+ /*-----------------*/
+ /* HEADER */
+ /*-----------------*/
+ 
+ .header{
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     padding: 25px;
+     transition: var(--transition-2);
+     z-index: 2;
+ }
+ 
+ .container{
+     padding: 15px; 
+ }
+ 
+ .header:active{
+     background: rgb(151, 0, 156);
+     padding: 20px;
+ }
+ 
+ .header .container{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+ }
+ 
+ .header-actions{
+     display: none;
+ }
+ .btn-mobile ion-icon{
+     color: var(--white);
+     color: var(--white);
+     font-size: 35px;
+ }
+ 
+ button{
+     background: transparent;
+     border: none;
+ }
+ 
+ .navbar{
+     position: fixed;
+     top: 0;
+     right: -300px;
+     background: var(--eerie-black);
+     width: 100%;
+     max-width: 300px;
+     height: 100%;
+     transition: 0.15s ease-in;
+     visibility: hidden;
+ }
+ 
+ .navbar.active{
+     right: 0;
+     visibility: visible;
+     transition: 0.25 ease-out;
+ }
+ 
+ .navbar-top{
+     padding: 30px 25px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+ }
+ 
+ .menu-close{
+     color:var(--white);
+     font-size: 25px;
+     padding: 5px;
+ }
+ 
+ .menu-close ion-icon{
+     --ionicon-stroke-width: 70px;
+ }
+ 
+ .navbar-list{
+     border-top: 1px solid hsla(0, 0%, 100%, 0.1);
+     margin-bottom: 30px;
+ }
+ 
+ .navbar-link{
+     color:var(--gray-x);
+     font-size: var(--fs-8);
+     font-weight: var(--fw-500);
+     padding: 5px 25px;
+     border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
+     transition: var(--transition1);
+     font-size: 17px;
+     font-weight: bold;
+ }
+ 
+ .navbar-link:hover{
+     color: rgb(151, 0, 156);
+ }
+ 
+ .navbar-social-list{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap: 20px;
+     
+ }
+ 
+ .navbar-social-link {
+     font-size: 30px;
+     color: var(--gray-x);
+     transition: var(--transition1);
+ }
+ 
+ .navbar-social-link:hover {
+     color: purple;
+ }
+ 
+ .overlay{
+     position: fixed;
+     inset: 0;
+     background: hsla(204, 18%, 11%, 0.8);
+     opacity: 0;
+     pointer-events: none;
+     transition: var(--transition-2);
+ }
+ 
+ .overlay.active{
+     pointer-events: all;
+ }
 
-html {
-  font-family: var(--ff-poppins);
-  scroll-behavior: smooth; /*Rolar a página*/
-}
+  /*-----------------*/
+ /* BANNER */
+ /*-----------------*/
 
-body {
-  background: var(--eerie-black);
-}
+ .hero{
+    background: url('../img/BANNER2\ \(4\).gif') no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: var(--section-padding);
+ }
 
-body.active {
-  overflow: hidden;
-}
+ .hero-content{
+     margin-top: 60px;
+ }
 
-.container {
-  padding: 15px;
-}
+ .hero-subtitle{
+     color: rgb(151, 0, 156);
+     font-size: var(--fs-4);
+     font-weight: var(--fw-700);
+     margin-bottom: 10px ;
+ }
 
-/* ------------------------------- *\
-* HEADER
-/* ------------------------------- */
+ .hero-title{
+    margin-bottom: 30px;
+    color: white;
+ }
 
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 25px;
-  transition: var(--transition2);
-  z-index: 2;
-}
-
-.header:active {
-  background: rgb(255, 142, 217);
-  padding: 20px;
-}
-
-.header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header-actions {
-  display: none;
-}
-
-.btn-mobile ion-icon {
-  color: white;
-  font-size: 40px;
-  cursor: pointer;
-}
-
-button {
-  background: transparent;
-  border: none;
-}
-
-.navbar {
-  position: fixed;
-  top: 0;
-  right: -300px;
-  background-color: var(--eerie-black);
-  width: 100%;
-  max-width: 300px;
-  height: 100%;
-  transition: 0.15s ease-in;
-  visibility: hidden;
-}
-
-.navbar.active {
-  right: 0;
-  visibility: visible;
-  transition: 0.25s ease-out;
-}
-
-.navbar-top {
-  padding: 30px 25px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.menu-close {
-  color: var(--white);
-  font-size: 25px;
-  padding: 5px;
-}
-
-.menu-close ion-icon {
-  --ionicon-stroke-width: 60px;
-}
-
-.navbar-list {
-  border-top: 1px solid hsla(0, 0%, 100%, 0.1);
-  margin-bottom: 30px;
-}
-
-.navbar-link {
-  color: white;
-  font-size: var(--fs-8);
-  font-weight: var(--fw-500);
-  padding: 10px 25px;
-  border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
-  transition: var(--transition1);
-}
-
-.navbar-link:hover {
-  color: rgb(255, 95, 202);
-}
-
-.navbar-social-list {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-}
-
-.navbar-social-link {
-  font-size: 20px;
-  color: white;
-  transition: var(--transition1);
-}
-
-.navbar-social-link:hover {
-  color: rgb(255, 95, 202);
-}
-
-.overlay {
-  position: fixed;
-  inset: 0;
-  background: hsla(204, 18%, 0.8);
-  opacity: 0;
-  pointer-events: none;
-  transition: var(--transition2);
-}
-
-.overlay.active {
-  pointer-events: all;
-}
+ .hero-title > strong{
+     color: rgb(151, 0, 156);
+ }
